@@ -136,8 +136,11 @@ def es_triangulo(a, b, c):
     if a <= 0 or b <= 0 or c <= 0:
         # Si alguna longitud no es positiva, no se puede formar un triángulo.
         return False
+    # Comprobar la desigualdad triangular para cada combinación de lados.
+    elif a + b > c and a + c > b and b + c > a:
+        # Si todas las combinaciones cumplen la desigualdad, se puede formar un triángulo.
+        return True
     else:
-        # Comprobar la desigualdad triangular para cada combinación de lados.
-        if a + b > c:
-           
+        # Si alguna combinación no cumple la desigualdad, no se puede formar un triángulo.
+        return False        
 ```
